@@ -1,4 +1,7 @@
 package com.mds.apppedidos;
 
-public interface PedidoDetailRepository {
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface PedidoDetailRepository extends JpaRepository<PedidoDetail, String> {
 }
