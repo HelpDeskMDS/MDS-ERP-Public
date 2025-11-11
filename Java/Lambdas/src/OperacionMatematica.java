@@ -1,4 +1,9 @@
-package PACKAGE_NAME;
+@FunctionalInterface
+interface OperacionMatematica {
+    int ejecutar(int a, int b);  // Único método abstracto
 
-public interface OperacionMatematica {
+    // Método default permitido
+    default void mostrarResultado(int resultado) {
+        System.out.println("Resultado: " + resultado);
+    }
 }

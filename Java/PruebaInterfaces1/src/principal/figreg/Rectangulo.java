@@ -1,5 +1,5 @@
 package principal.figreg;
 
-public class EjemploLambda {
+public class Rectangulo {
 
 }

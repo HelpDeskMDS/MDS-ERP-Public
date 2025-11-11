@@ -1,0 +1,44 @@
+<div class="container">
+  <h2>Tabla Maestro de Referencias</h2>
+  
+  <!-- Mensaje de carga -->
+  <div *ngIf="loading" class="loading">
+    Cargando referencias...
+  </div>
+  
+  <!-- Mensaje de error -->
+  <div *ngIf="error" class="error">
+    {{ error }}
+  </div>
+  
+  <!-- Tabla de referencias -->
+  <div *ngIf="!loading && !error && references.length > 0">
+    <table class="references-table">
+      <thead>
+        <tr>
+          <th>Código</th>
+          <th>Nombre</th>
+          <th>Grupo</th>
+          <th>Unidad</th>
+          <th>Existencias</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let ref of references">
+          <td>{{ ref.cod.trim() }}</td>
+          <td>{{ ref.nom.trim() }}</td>
+          <td>{{ ref.grup.trim() }}</td>
+          <td>{{ ref.ud.trim() }}</td>
+          <td>{{ ref.exist }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  <!-- Mensaje si no hay datos -->
+  <div *ngIf="!loading && !error && references.length === 0" class="no-data">
+    No se encontraron referencias
+  </div>
+  
+  <router-outlet />
+</div>
